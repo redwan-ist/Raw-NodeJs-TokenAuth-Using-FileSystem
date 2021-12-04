@@ -117,7 +117,7 @@ handler.put =(parsedData,callback)=>{
                     }
                     else{
                         callback(500,{
-                            "Error": "Something Went Wrong"
+                            Error: "Something Went Wrong"
                         })
                     }
                     
@@ -125,7 +125,7 @@ handler.put =(parsedData,callback)=>{
             }
             else{
                 callback(500,{
-                    "Error": "Wrong Type Or validate error"
+                    Error: "Wrong Type Or validate error"
                 })
             }
         }
@@ -148,29 +148,29 @@ handler.delete =(parsedData,callback)=>{
                     if(!err){
                         
                         callback(200,
-                            {'Messege':`deleted ${parsedData.body.phone}`}
+                            {Messege:`deleted ${parsedData.body.phone}`}
                             );
                     }
                     else{
                         callback(500,
-                            {'error':'someting Wrong'}
+                            {error:'someting Wrong'}
                         )
                     }
                 })
             }
             else{
                 callback(500,
-                    {'error':'someting Wrong'}
+                    {error:'someting Wrong'}
                 )
             }
         })
     }
     else{
-        callback(500,{'error':'phone=xxxxxxxx'})
+        callback(500,{error:'phone=xxxxxxxx'})
     }}
     else{
         callback(500,
-            {'error':'notAuthenticated'}
+            {error:'notAuthenticated'}
         )
     }
 });
