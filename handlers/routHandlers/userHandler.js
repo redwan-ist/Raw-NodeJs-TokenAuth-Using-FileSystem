@@ -26,19 +26,19 @@ handler.get =(parsedData,callback)=>{
                         callback(200,userData);
                     }
                     else{
-                        callback(403,
-                            {'error':'someting Wrong'}
+                        callback(500,
+                            {error:'someting Wrong'}
                         )
                     }
                 })
             }
             else{
-                callback(500,{'error':'phone=xxxxxxxx'})
+                callback(500,{error:'phone=xxxxxxxx'})
             }
         
         }
         else{
-            callback(500,{'error':'notAuthenticated'})
+            callback(500,{error:'notAuthenticated'})
         }
     })
 };
@@ -58,15 +58,15 @@ handler.post =(parsedData,callback)=>{
         }
        crud.read("user",phone,(err)=>{
            if(!err){
-            callback(500,{'error':'user Already Exist'})
+            callback(500,{error:'user Already Exist'})
            }
            else{
             crud.create("user",phone,data,(err)=>{
                 if(!err){
-                    callback(200,{'message':"added User Succesfully"});
+                    callback(200,{message:"added User Succesfully"});
                 }
                 else{
-                    callback(500,{'error':'something wrong'});
+                    callback(500,{error:'something wrong'});
                 }
             });
            }
@@ -75,7 +75,7 @@ handler.post =(parsedData,callback)=>{
     } 
     else{
         callback(500,{
-            "Error": "Wrong Type Or validate error"
+            Error: 'Wrong Type Or validate error'
         })
     }
     
