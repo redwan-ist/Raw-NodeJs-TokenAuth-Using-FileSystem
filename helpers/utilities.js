@@ -1,5 +1,13 @@
+/*
+* Title : utilities
+* Description: utilitiles and helper function
+* Author: Md. Redwan Ahmed
+* Date: 26/11/2020
+*/
 const crypto = require('crypto');
+const invironment = require('./environment')
 const utilities = {}
+
 
 utilities.parseJSON =(string)=>{
     output = {}
@@ -15,7 +23,7 @@ utilities.parseJSON =(string)=>{
 }
 utilities.encrypt =(string)=>{
     if(typeof(string)==='string' && string.length >0){
-     let hash =crypto.createHmac("sha256","afshagfahguaghakj").update(string).digest('hex');
+     let hash =crypto.createHmac("sha256",invironment.SKEY).update(string).digest('hex');
      return hash;
     }
     return false;

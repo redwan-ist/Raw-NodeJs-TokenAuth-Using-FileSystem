@@ -1,11 +1,19 @@
+/*
+* Title : Environment
+* Description: Environment varialbe for production and stage
+* Author: Md. Redwan Ahmed
+* Date: 26/11/2020
+*/
 const environment ={}
 
 environment.production ={
     port : 5000,
+    SKEY :'KdhG5NCYxcjxg6gDE2zZ',
 }
 
 environment.stage ={
     port : 3000,
+    SKEY :'LahE4SNYyZjxw4gDE2zC',
 }
 
 

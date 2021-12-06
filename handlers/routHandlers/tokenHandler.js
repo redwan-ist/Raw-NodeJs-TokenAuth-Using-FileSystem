@@ -1,3 +1,9 @@
+/*
+* Title : Token Handler
+* Description: token crud
+* Author: Md. Redwan Ahmed
+* Date: 26/11/2020
+*/
 const crud = require('../../.lib/crud')
 const util = require('../../helpers/utilities')
 const handler ={};
@@ -31,12 +37,12 @@ handler.post=(parsedData,callback)=>{
                                 callback(200,{message: 'token created'});
                             }
                             else{
-                                callback(500,{error: 'authentication failure'});
+                                callback(401,{error: 'authentication failure'});
                             }
                         });
                 }
                 else{
-                    callback(500,{error: 'authentication failure'});
+                    callback(401,{error: 'authentication failure'});
                 }
                 
             }
@@ -61,7 +67,7 @@ handler.get=(parsedData,callback)=>{
                     callback(200,data);
                 }
                 else{
-                    callback(500,{error:"token Expired"});
+                    callback(401,{error:"token Expired"});
                 }
             }
             else{
@@ -70,7 +76,7 @@ handler.get=(parsedData,callback)=>{
         });
     }
     else{
-        callback(500,{error:"invalid Token"});
+        callback(401,{error:"invalid Token"});
     }
     
 }
@@ -94,7 +100,7 @@ handler.put=(parsedData,callback)=>{
                     )
                 }
                 else{
-                    callback(500,{error:"token already expired"});
+                    callback(401,{error:"token already expired"});
                 }
             }
             else{
@@ -103,7 +109,7 @@ handler.put=(parsedData,callback)=>{
         });
     }
     else{
-        callback(200,{})
+        callback(500,{error:"something wrong on server side"});
     }
    
 }

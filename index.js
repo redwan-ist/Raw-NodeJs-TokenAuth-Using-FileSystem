@@ -1,6 +1,6 @@
 /*
-* Title : Uptime Monitioring App
-* Description: A RESTFul API to check if server is up or down
+* Title : Token Based User Authentication with file system
+* Description: A RESTFul API 
 * Author: Md. Redwan Ahmed
 * Date: 26/11/2020
 */

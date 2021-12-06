@@ -1,3 +1,11 @@
+/*
+* Title : User Handle
+* Description: crud opertation for user
+* Author: Md. Redwan Ahmed
+* Date: 26/11/2020
+*/
+
+
 const crud = require('../../.lib/crud')
 const util = require('../../helpers/utilities')
 const auth = require('./tokenHandler')
@@ -105,11 +113,11 @@ handler.put =(parsedData,callback)=>{
                         console.log(data);
                         crud.update('user',phone,data,(err)=>{
                             if(!err){
-                                callback(200,{"message": "updated Succesfully"});
+                                callback(200,{message: "updated Succesfully"});
                             }
                             else{
                                 callback(500,{
-                                    "Error": "Something Went Wrong"
+                                    Error: "Something Went Wrong"
                                 })
                             }
                             }    
@@ -130,7 +138,7 @@ handler.put =(parsedData,callback)=>{
             }
         }
         else{
-            callback(500,{'error':'notAuthenticated'})
+            callback(500,{error:'notAuthenticated'})
         }
     });
 
@@ -169,7 +177,7 @@ handler.delete =(parsedData,callback)=>{
         callback(500,{error:'phone=xxxxxxxx'})
     }}
     else{
-        callback(500,
+        callback(401,
             {error:'notAuthenticated'}
         )
     }
