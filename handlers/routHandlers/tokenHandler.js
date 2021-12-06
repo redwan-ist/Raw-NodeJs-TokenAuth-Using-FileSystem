@@ -34,7 +34,8 @@ handler.post=(parsedData,callback)=>{
                         }
                         crud.create('token',id,tokenData,(err)=>{
                             if(!err){
-                                callback(200,{message: 'token created'});
+                                
+                                callback(200,tokenData);
                             }
                             else{
                                 callback(401,{error: 'authentication failure'});
